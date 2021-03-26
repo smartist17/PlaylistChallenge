@@ -9,6 +9,19 @@ public class Music {
     }
 
     public Integer selection(Integer startIndex, String selection){
-        return null;
+
+        int currentSelection = 0;
+
+        for(int i = 0; i <= playList.length; i++){
+            if (playList[i].equals(selection)) {
+                currentSelection = Math.abs(startIndex - i);
+            }
+
+        }
+
+
+
+
+        return Integer.min(playList.length - currentSelection, currentSelection);
     }
 }
